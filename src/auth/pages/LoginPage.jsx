@@ -6,15 +6,18 @@ export default function LoginPage() {
 
     const navigate = useNavigate();
 
-    const {logged,loginUser} = useContext(AuthContext);
+    const {loginUser} = useContext(AuthContext);
 
-    console.log(logged);
-    console.log(loginUser);
+    // console.log(logged);
+    // console.log(loginUser);
+
+    const lastPage = localStorage.getItem('lastPage') || '/'
+    console.log(lastPage);
 
     const onLogin = ()=>{
 
         loginUser('Fanita bebe')
-        navigate('/',{replace: true})
+        navigate(lastPage,{replace: true})
     }
     return (
         <div className='container mt-5'>
